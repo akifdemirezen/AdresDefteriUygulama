@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+   
+        <script type="text/javascript">
+            
+            function sil() {
+                var  karar = confirm("Silmek İstediğinize Emin misiniz?"); //confirm ekrana gelen tamam butonuna basılınca true dönüyor
+                if(karar)
+                    return true;
+                else
+                    return false;}
+        </script>
+      
+    </head>
+    <body>
+       <h:form>
+            <h:dataTable value="#{kullanicilaricek.kayitlar}" var="kayitcekobje">
+                <h:column>
+                    <f:facet name="header">
+                        ID
+                    </f:facet>
+                    <h:outputText value="#{kayitcekobje.ID}"/>
+                </h:column> 
+                 <h:column>
+                    <f:facet name="header">
+                        AD
+                    </f:facet>
+                     <h:outputText value="#{kayitcekobje.ad}"/>
+                </h:column> 
+               <h:column>
+                    <f:facet name="header">
+                        SoyAd
+                    </f:facet>
+                   <h:outputText value="#{kayitcekobje.soyad}"/>
+                </h:column> 
+                 <h:column>
+                    <f:facet name="header">
+                        Tel
+                    </f:facet>
+                     <h:outputText value="#{kayitcekobje.tel}"/>
+                </h:column> 
+               <h:column>
+                    <f:facet name="header">
+                        Email
+                    </f:facet>
+                   <h:outputText value="#{kayitcekobje.email}"/>
+                </h:column> 
+                  <h:column>
+                    <f:facet name="header">
+                        Adres
+                    </f:facet>
+                      <h:outputText value="#{kayitcekobje.adres}"/>
+                </h:column> 
+                  <h:column>
+                    <f:facet name="header">
+                        Silme bölümü
+                    </f:facet>
+                      
+                      <h:commandButton value="Sil" action="#{kayitsil.kayitsil(kayitcekobje)}" onclick="return sil();"/>
+                </h:column> 
+                
+            </h:dataTable>
+            
+           <h:commandButton value="Anasayfaya don" action="#{kullaniciBean.index()}"/>
+        </h:form>
+    </body>
+</html>

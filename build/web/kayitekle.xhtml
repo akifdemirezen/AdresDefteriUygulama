@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+       
+        <h:form>
+            <h:panelGrid> 
+        <h2>Kayıt Ekleme Sayfası</h2>
+        
+        <h:outputText value="Ad giriniz :  "/>
+        <h:inputText id="ad" value="#{kullaniciBean.ad}"/>
+        <h:outputText value="SoyAd giriniz :  "/>
+        <h:inputText id="soyad" value="#{kullaniciBean.soyad}"/>
+        <h:outputText value="Tel giriniz :  "/>
+        <h:inputText id="tel" value="#{kullaniciBean.tel}"/>
+        <h:outputText value="Email giriniz :  "/>
+        <h:inputText id="email" value="#{kullaniciBean.email}"/>
+        <h:outputText value="Adres giriniz :  "/>
+        <h:inputTextarea id="adres" value="#{kullaniciBean.adres}"/>
+        <br></br>
+        <br></br>
+        <h:commandButton value="ekle" action="#{kullaniciBean.veritabaniekle()}"/>
+        <br></br>
+        <h:commandButton value="anasayfaya dön" action="#{kullaniciBean.index()}"/>
+            </h:panelGrid>
+            
+           
+            
+            </h:form>
+    
+    </body>
+</html>
